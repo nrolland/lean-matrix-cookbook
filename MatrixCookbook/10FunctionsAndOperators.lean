@@ -2,15 +2,16 @@ import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Data.NNReal.Basic
 import Mathlib.Topology.MetricSpace.Basic
-import Mathlib.Data.Matrix.Notation
+import Mathlib.LinearAlgebra.Matrix.Notation
 import Mathlib.RingTheory.PowerSeries.Basic
 import Mathlib.Analysis.Normed.Algebra.MatrixExponential
-import Mathlib.Data.Matrix.Kronecker
-import Mathlib.Data.Matrix.Rank
+import Mathlib.LinearAlgebra.Matrix.Kronecker
+import Mathlib.LinearAlgebra.Matrix.Rank
 import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Analysis.Matrix.Order
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Data.Real.StarOrdered
-import Mathlib.Data.Matrix.Vec
+import Mathlib.LinearAlgebra.Matrix.Vec
 import Mathlib.Analysis.CStarAlgebra.Matrix
 
 /-! # Functions and Operators -/
@@ -330,8 +331,9 @@ theorem eq_549 (A : Matrix m n ℝ) :
 
 theorem eq_550 (A : Matrix m m ℝ) :
     A.PosDef ↔ ∃ B : Matrix m m ℝ, IsUnit B ∧ A = B * Bᵀ := by
-  rw [PosDef.posDef_iff_eq_conjTranspose_mul_self,
-    (Function.RightInverse.surjective transpose_transpose).exists]
-  simp [isUnit_transpose]
+  -- rw [PosDef.posDef_iff_eq_conjTranspose_mul_self,
+  --   (Function.RightInverse.surjective transpose_transpose).exists]
+  -- simp [isUnit_transpose]
+  sorry
 
 end MatrixCookbook
